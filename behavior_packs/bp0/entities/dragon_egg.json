@@ -1,0 +1,242 @@
+{
+
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    
+    
+
+
+
+    "description": {
+
+      "identifier": "x:dragon_egg",
+
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+
+      "animations": {
+
+      },
+
+      "scripts": {
+        "animate": [
+
+        ]
+      }
+
+    },
+
+
+
+
+
+    "component_groups": {
+
+      "x:despawn": { "minecraft:instant_despawn": {} },
+
+      "x:generic_dragon_egg":{
+        "minecraft:type_family": {"family": [ "x:x", "x:dragon_egg", "x:generic_dragon_egg" ]}
+      },
+
+      "x:nature_dragon_egg":{
+        "minecraft:type_family": {"family": [ "x:x", "x:dragon_egg", "x:nature_dragon_egg" ]}
+      },
+
+      "x:hatch_generic_dragon": {        
+        "minecraft:is_charged": {},
+        "minecraft:pushable": {},
+        "minecraft:type_family": {"family": [ "x:x", "x:dragon_egg", "x:generic_dragon_egg", "x:dragon_egg_hatched" ]}
+      },
+
+      "x:hatch_nature_dragon": {        
+        "minecraft:is_charged": {},
+        "minecraft:pushable": {},
+        "minecraft:type_family": {"family": [ "x:x", "x:dragon_egg", "x:nature_dragon_egg", "x:dragon_egg_hatched" ]}
+      }
+
+      /// ↓ VANILLA CGs ↓
+
+    },
+
+
+
+
+
+    "components": {
+
+      "minecraft:type_family": {"family": [ "x:x", "x:dragon_egg" ]},
+      "minecraft:breathable": { "breathes_air": true, "breathes_water": true, "breathes_lava": true },
+      "minecraft:health": { "value": 30, "max": 30 },
+      "minecraft:physics": { "has_collision": true, "has_gravity": true },
+      "minecraft:collision_box": { "height": 1, "width": 1 },
+      "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:bronze_axe" }
+            },
+            "damage_multiplier": 3.5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:curved_sword" }
+            },
+            "damage_multiplier": 4.5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:dark_blade" }
+            },
+            "damage_multiplier": 4.5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:double_axe" }
+            },
+            "damage_multiplier": 5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:emerald_broadsword" }
+            },
+            "damage_multiplier": 5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:ice_spear" }
+            },
+            "damage_multiplier": 3.5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:nimble_dagger" }
+            },
+            "damage_multiplier": 4,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:royal_sword" }
+            },
+            "damage_multiplier": 4.5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:valor_hammer" }
+            },
+            "damage_multiplier": 4,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:vanguard_sword" }
+            },
+            "damage_multiplier": 5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of":[
+                  {
+                    "test": "has_damage",
+                    "subject": "self",
+                    "value": "fatal"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "self",
+                    "value": "x:generic_dragon_egg"
+                  }
+                ]
+              },
+              "event": "x:hatch_generic_dragon",
+              "target": "self"
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of":[
+                  {
+                    "test": "has_damage",
+                    "subject": "self",
+                    "value": "fatal"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "self",
+                    "value": "x:nature_dragon_egg"
+                  }
+                ]
+              },
+              "event": "x:hatch_nature_dragon",
+              "target": "self"
+            },
+            "deals_damage": false
+          }
+        ]
+      }
+
+      // "minecraft:tick_world": { "never_despawn": true, "radius": 2 }
+
+      /// ↓ VANILLA COMPONENTS ↓
+
+    },
+
+
+
+
+
+    "events": {
+
+      "x:despawn": { "add": { "component_groups" : [ "x:despawn" ] } },
+
+      "x:generic_dragon_egg":{
+        "add": {"component_groups": [ "x:generic_dragon_egg" ]}
+      },
+
+      "x:nature_dragon_egg":{
+        "add": {"component_groups": [ "x:nature_dragon_egg" ]}
+      },
+
+      "x:hatch_generic_dragon":{
+        "add": {"component_groups": [ "x:hatch_generic_dragon" ]}
+      },
+
+      "x:hatch_nature_dragon":{
+        "add": {"component_groups": [ "x:hatch_nature_dragon" ]}
+      },
+
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {"weight":1, "add":{"component_groups": ["x:generic_dragon_egg"]}},
+          {"weight":1, "add":{"component_groups": ["x:nature_dragon_egg"]}}
+        ]
+      }
+
+      /// ↓ VANILLA EVENTS ↓
+
+    }
+    
+  }
+
+}

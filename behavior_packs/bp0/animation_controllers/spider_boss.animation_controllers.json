@@ -1,0 +1,27 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.spider_boss.attack" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"on_entry" : [
+						"@s spider_boss:attack"
+					],
+					"transitions" : [
+						{
+							"attack" : "q.is_delayed_attacking"
+						}
+					]
+				},
+				"attack" : {
+					"transitions" : [
+						{
+							"default" : "!q.is_delayed_attacking"
+						}
+					]
+				}
+			}
+		}
+	}
+}

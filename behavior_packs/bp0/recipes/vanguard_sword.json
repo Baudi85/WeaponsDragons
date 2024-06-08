@@ -1,0 +1,30 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "x:vanguard_sword"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " I ",
+      "DID",
+      " S "
+    ],
+    "key": {
+      "D": {
+        "item": "minecraft:diamond"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "S":{
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "x:vanguard_sword"
+    }
+  }
+}

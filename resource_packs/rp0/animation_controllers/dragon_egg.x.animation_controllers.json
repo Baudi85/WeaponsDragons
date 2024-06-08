@@ -1,0 +1,78 @@
+{
+    "format_version": "1.18.0",
+    "animation_controllers": {
+        "controller.animation.x.dragon_egg.hatch": {
+            "states": {
+                "default":{
+                    "transitions": [
+                        {
+                            "jump": "query.health / query.max_health >= 0.99"
+                        },
+                        {
+                            "wobble1": "(query.health / query.max_health < 0.99) && (query.health / query.max_health >= 0.75) && !query.is_powered"
+                        },
+                        {
+                            "wobble2": "(query.health / query.max_health < 0.75) && (query.health / query.max_health >= 0.25) && !query.is_powered"
+                        },
+                        {
+                            "wobble3": "(query.health / query.max_health < 0.25) && !query.is_powered"
+                        },
+                        {
+                            "hatch": "query.is_powered"
+                        }
+                    ]
+                },
+                "jump":{
+                    "animations": [
+                        "jump"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.health / query.max_health < 0.99"
+                        }
+                    ],
+                    "blend_transition": 0.3
+                },
+                "wobble1":{
+                    "animations": [
+                        "wobble1"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ],
+                    "blend_transition": 0.3
+                },
+                "wobble2":{
+                    "animations": [
+                        "wobble2"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ],
+                    "blend_transition": 0.3
+                },
+                "wobble3":{
+                    "animations": [
+                        "wobble3"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        }
+                    ],
+                    "blend_transition": 0.3
+                },
+                "hatch":{
+                    "animations": [
+                        "hatch"
+                    ],
+                    "blend_transition": 0.3
+                }
+            }
+        }
+    }
+}

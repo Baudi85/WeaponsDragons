@@ -1,0 +1,223 @@
+{
+    "format_version": "1.17.0",
+    "animation_controllers": {
+        "controller.animation.player.jumping": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/tag @s remove X.IS_JUMPING"
+                    ],
+                    "transitions": [
+                        {
+                            "jumping": "query.is_jumping"
+                        }
+                    ]
+                },
+                "jumping": {
+                    "on_entry": [
+                        "/tag @s add X.IS_JUMPING"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_jumping"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.player.riding": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/tag @s remove X.IS_RIDING"
+                    ],
+                    "transitions": [
+                        {
+                            "riding": "query.is_riding"
+                        }
+                    ]
+                },
+                "riding": {
+                    "on_entry": [
+                        "/tag @s add X.IS_RIDING"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_riding"
+                        }
+                    ]
+                }
+            }
+        },
+
+        "controller.animation.player.wearing_dragon_armor_helmet": {
+            "initial_state": "default",
+            "states": {
+                "default": {"transitions": [{"wearing": "query.is_stunned"}]},
+                "wearing": {
+                    "on_entry": ["/tag @s add X.IS_WEARING_DRAGON_HELMET"],
+                    "transitions": [{"default": "!query.is_in_ui && !query.is_item_name_any('slot.armor.head',0,'minecraft:netherite_helmet')"}],
+                    "on_exit": ["/tag @s remove X.IS_WEARING_DRAGON_HELMET"]
+                }
+            }
+        },
+
+        "controller.animation.player.wearing_dragon_armor_chestplate": {
+            "initial_state": "default",
+            "states": {
+                "default": {"transitions": [{"wearing": "query.is_sheared"}]},
+                "wearing": {
+                    "on_entry": ["/tag @s add X.IS_WEARING_DRAGON_CHESTPLATE"],
+                    "transitions": [{"default": "!query.is_in_ui && !query.is_item_name_any('slot.armor.chest',0,'minecraft:netherite_chestplate')"}],
+                    "on_exit": ["/tag @s remove X.IS_WEARING_DRAGON_CHESTPLATE"]
+                }
+            }
+        },
+
+        "controller.animation.player.wearing_dragon_armor_leggings": {
+            "initial_state": "default",
+            "states": {
+                "default": {"transitions": [{"wearing": "query.is_saddled"}]},
+                "wearing": {
+                    "on_entry": ["/tag @s add X.IS_WEARING_DRAGON_LEGGINGS"],
+                    "transitions": [{"default": "!query.is_in_ui && !query.is_item_name_any('slot.armor.legs',0,'minecraft:netherite_leggings')"}],
+                    "on_exit": ["/tag @s remove X.IS_WEARING_DRAGON_LEGGINGS"]
+                }
+            }
+        },
+
+        "controller.animation.player.wearing_dragon_armor_boots": {
+            "initial_state": "default",
+            "states": {
+                "default": {"transitions": [{"wearing": "query.is_tamed"}]},
+                "wearing": {
+                    "on_entry": ["/tag @s add X.IS_WEARING_DRAGON_BOOTS"],
+                    "transitions": [{"default": "!query.is_in_ui && !query.is_item_name_any('slot.armor.feet',0,'minecraft:netherite_boots')"}],
+                    "on_exit": ["/tag @s remove X.IS_WEARING_DRAGON_BOOTS"]
+                }
+            }
+        },
+
+        "controller.animation.player.dragon_armor_item": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {"use_helmet": "query.is_using_item && !query.is_in_ui && query.is_item_name_any('slot.weapon.mainhand',0,'x:dragon_helmet')"},
+                        {"use_chestplate": "query.is_using_item && !query.is_in_ui && query.is_item_name_any('slot.weapon.mainhand',0,'x:dragon_chestplate')"},
+                        {"use_leggings": "query.is_using_item && !query.is_in_ui && query.is_item_name_any('slot.weapon.mainhand',0,'x:dragon_leggings')"},
+                        {"use_boots": "query.is_using_item && !query.is_in_ui && query.is_item_name_any('slot.weapon.mainhand',0,'x:dragon_boots')"}
+                    ]
+                },
+                "use_helmet": {
+                    "on_entry": ["/tag @s add X.IS_USING_DRAGON_HELMET"],
+                    "transitions": [{"default": "!query.is_using_item || (!query.is_in_ui && !query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:netherite_helmet'))"}]
+                },
+                "use_chestplate": {
+                    "on_entry": ["/tag @s add X.IS_USING_DRAGON_CHESTPLATE"],
+                    "transitions": [{"default": "!query.is_using_item || (!query.is_in_ui && !query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:netherite_chestplate'))"}]
+                },
+                "use_leggings": {
+                    "on_entry": ["/tag @s add X.IS_USING_DRAGON_LEGGINGS"],
+                    "transitions": [{"default": "!query.is_using_item || (!query.is_in_ui && !query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:netherite_leggings'))"}]
+                },
+                "use_boots": {
+                    "on_entry": ["/tag @s add X.IS_USING_DRAGON_BOOTS"],
+                    "transitions": [{"default": "!query.is_using_item || (!query.is_in_ui && !query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:netherite_boots'))"}]
+                }
+            }
+        },
+
+        "controller.animation.player.weapon": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/tag @s remove X.EQUIPPED_BRONZE_AXE",
+                        "/tag @s remove X.EQUIPPED_VALOR_HAMMER",
+                        "/tag @s remove X.EQUIPPED_DARK_BLADE",
+                        "/tag @s remove X.EQUIPPED_EMERALD_BROADSWORD",
+                        "/tag @s remove X.EQUIPPED_NIMBLE_DAGGER",
+                        "/tag @s remove X.EQUIPPED_CURVED_SWORD",
+                        "/tag @s remove X.EQUIPPED_ICE_SPEAR",
+                        "/tag @s remove X.EQUIPPED_DOUBLE_AXE",
+                        "/tag @s remove X.EQUIPPED_VANGUARD_SWORD",
+                        "/tag @s remove X.EQUIPPED_ROYAL_SWORD"
+                    ],
+                    "transitions": [
+                        {"bronze_axe": "query.is_item_name_any('slot.weapon.mainhand',0,'x:bronze_axe')"},
+                        {"valor_hammer": "query.is_item_name_any('slot.weapon.mainhand',0,'x:valor_hammer')"},
+                        {"dark_blade": "query.is_item_name_any('slot.weapon.mainhand',0,'x:dark_blade')"},
+                        {"emerald_broadsword": "query.is_item_name_any('slot.weapon.mainhand',0,'x:emerald_broadsword')"},
+                        {"nimble_dagger": "query.is_item_name_any('slot.weapon.mainhand',0,'x:nimble_dagger')"},
+                        {"curved_sword": "query.is_item_name_any('slot.weapon.mainhand',0,'x:curved_sword')"},
+                        {"ice_spear": "query.is_item_name_any('slot.weapon.mainhand',0,'x:ice_spear')"},
+                        {"double_axe": "query.is_item_name_any('slot.weapon.mainhand',0,'x:double_axe')"},
+                        {"vanguard_sword": "query.is_item_name_any('slot.weapon.mainhand',0,'x:vanguard_sword')"},
+                        {"royal_sword": "query.is_item_name_any('slot.weapon.mainhand',0,'x:royal_sword')"}
+                    ]
+                },
+                "bronze_axe": {
+                    "on_entry": ["/tag @s add X.EQUIPPED_BRONZE_AXE"],
+                    "transitions": [{"default": "!query.is_item_name_any('slot.weapon.mainhand',0,'x:bronze_axe')"}]
+                },
+                "valor_hammer": {
+                    "on_entry": ["/tag @s add X.EQUIPPED_VALOR_HAMMER"],
+                    "transitions": [{"default": "!query.is_item_name_any('slot.weapon.mainhand',0,'x:valor_hammer')"}]
+                },
+                "dark_blade": {
+                    "on_entry": ["/tag @s add X.EQUIPPED_DARK_BLADE"],
+                    "transitions": [{"default": "!query.is_item_name_any('slot.weapon.mainhand',0,'x:dark_blade')"}]
+                },
+                "emerald_broadsword": {
+                    "on_entry": ["/tag @s add X.EQUIPPED_EMERALD_BROADSWORD"],
+                    "transitions": [{"default": "!query.is_item_name_any('slot.weapon.mainhand',0,'x:emerald_broadsword')"}]
+                },
+                "nimble_dagger": {
+                    "on_entry": ["/tag @s add X.EQUIPPED_NIMBLE_DAGGER"],
+                    "transitions": [{"default": "!query.is_item_name_any('slot.weapon.mainhand',0,'x:nimble_dagger')"}]
+                },
+                "curved_sword": {
+                    "on_entry": ["/tag @s add X.EQUIPPED_CURVED_SWORD"],
+                    "transitions": [{"default": "!query.is_item_name_any('slot.weapon.mainhand',0,'x:curved_sword')"}]
+                },
+                "ice_spear": {
+                    "on_entry": ["/tag @s add X.EQUIPPED_ICE_SPEAR"],
+                    "transitions": [{"default": "!query.is_item_name_any('slot.weapon.mainhand',0,'x:ice_spear')"}]
+                },
+                "double_axe": {
+                    "on_entry": ["/tag @s add X.EQUIPPED_DOUBLE_AXE"],
+                    "transitions": [{"default": "!query.is_item_name_any('slot.weapon.mainhand',0,'x:double_axe')"}]
+                },
+                "vanguard_sword": {
+                    "on_entry": ["/tag @s add X.EQUIPPED_VANGUARD_SWORD"],
+                    "transitions": [{"default": "!query.is_item_name_any('slot.weapon.mainhand',0,'x:vanguard_sword')"}]
+                },
+                "royal_sword": {
+                    "on_entry": ["/tag @s add X.EQUIPPED_ROYAL_SWORD"],
+                    "transitions": [{"default": "!query.is_item_name_any('slot.weapon.mainhand',0,'x:royal_sword')"}]
+                }
+            }
+        },
+
+        "controller.animation.player.weapon_attack": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "@s x:reset_attack"
+                    ],
+                    "transitions": [
+                        {"weapon_attack": "query.mark_variant"}
+                    ]
+                },
+                "weapon_attack": {
+                    "on_entry": ["/scoreboard players set @s X.WEAPON_DELAY 3"],
+                    "transitions": [{"default": "!variable.attack_time"}]
+                }
+            }
+        }
+    }
+}

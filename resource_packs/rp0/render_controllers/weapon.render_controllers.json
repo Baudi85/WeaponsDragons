@@ -1,0 +1,66 @@
+{
+
+  "format_version": "1.8.0",
+  "render_controllers": {
+
+    "controller.render.player.bronze_axe": {    
+      "geometry": "Geometry.bronze_axe",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.bronze_axe" ]    
+    },
+
+    "controller.render.player.curved_sword": {    
+      "geometry": "Geometry.curved_sword",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.curved_sword" ]    
+    },
+
+    "controller.render.player.dark_blade": {    
+      "geometry": "Geometry.dark_blade",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.dark_blade" ]    
+    },
+
+    "controller.render.player.double_axe": {    
+      "geometry": "Geometry.double_axe",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.double_axe" ]    
+    },
+
+    "controller.render.player.emerald_broadsword": {    
+      "geometry": "Geometry.emerald_broadsword",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.emerald_broadsword" ]    
+    },
+
+    "controller.render.player.ice_spear": {    
+      "geometry": "Geometry.ice_spear",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.ice_spear" ]    
+    },
+
+    "controller.render.player.nimble_dagger": {    
+      "geometry": "Geometry.nimble_dagger",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.nimble_dagger" ]    
+    },
+
+    "controller.render.player.royal_sword": {    
+      "geometry": "Geometry.royal_sword",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.royal_sword" ]    
+    },
+
+    "controller.render.player.valor_hammer": {    
+      "geometry": "Geometry.valor_hammer",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.valor_hammer" ]    
+    },
+
+    "controller.render.player.vanguard_sword": {    
+      "geometry": "Geometry.vanguard_sword",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.vanguard_sword" ]    
+    }
+  }
+}

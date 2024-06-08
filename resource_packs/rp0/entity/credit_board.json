@@ -1,0 +1,26 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "x:credit_board",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/credit_board"
+            },
+            "geometry": {
+                "default": "geometry.credit_board"
+            },
+            // "animations": {
+            // },
+            // "scripts": {
+            //     "animate": [
+            //     ]
+            // },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

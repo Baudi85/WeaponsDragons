@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+        "description": {
+            "identifier": "x:nimble_dagger",
+            "category": "Equipment"
+        },
+        "components": {
+            "minecraft:icon": "nimble_dagger",
+            "minecraft:render_offsets": "apple"
+        }
+    }
+}

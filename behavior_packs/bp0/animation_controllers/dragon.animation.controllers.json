@@ -1,0 +1,83 @@
+{
+    "format_version": "1.17.0",
+    "animation_controllers": {
+        "controller.animation.x.dragon.breed": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/tag @s remove X.IS_IN_LOVE"
+                    ],
+                    "transitions": [
+                        {
+                            "breed": "query.is_in_love"
+                        }
+                    ]
+                },
+                "breed": {
+                    "on_entry": [
+                        "/tag @s add X.IS_IN_LOVE"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_in_love"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.x.dragon.ridden": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/tag @s remove X.IS_RIDDEN"
+                        // "/ride @s summon_ride x:dragon_brakes"
+                        // "/effect @s slowness 5 255 true",
+                    ],
+                    "transitions": [
+                        {
+                            "ridden": "query.has_rider"
+                        }
+                    ]
+                },
+                "ridden": {
+                    "on_entry": [
+                        "/tag @s add X.IS_RIDDEN"
+                        // "/ride @s stop_riding"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.has_rider"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.x.dragon.ground": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/tag @s remove X.IS_GROUNDED"
+                    ],
+                    "transitions": [
+                        {
+                            "grounded": "query.is_on_ground"
+                        }
+                    ]
+                },
+                "grounded": {
+                    "on_entry": [
+                        "/tag @s add X.IS_GROUNDED"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_on_ground"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

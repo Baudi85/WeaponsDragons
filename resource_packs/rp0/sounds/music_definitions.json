@@ -1,0 +1,7 @@
+{
+  "wd_intro": {
+    "event_name" : "music.wd_intro",
+    "min_delay": 0,
+    "max_delay": 1
+  }
+}

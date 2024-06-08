@@ -1,0 +1,340 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "spider:boss",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+				"animate": [
+          "hurt",
+					"system"
+				]
+			},
+			"animations": {
+				"system": "controller.animation.spider_boss.attack",
+        "hurt":"controller.animation.common.hurt" 
+			}
+    },
+
+    "component_groups": {
+
+      "x:despawn":{"minecraft:instant_despawn": {}},
+
+      //attacks
+      "spider_boss:normal_attack": {
+        "minecraft:attack": {
+          "damage": 10
+        },
+        "minecraft:behavior.delayed_attack": {
+          "priority": 0,
+          "attack_once": false,
+          "track_target": true,
+          "require_complete_path": false,
+          "random_stop_interval": 0,
+          "reach_multiplier": 2.0,
+          "speed_multiplier": 1.1,
+          "attack_duration": 1.05,
+          "hit_delay_pct": 0.80
+        }
+      },
+      "spider_boss:vomit": {
+        "minecraft:attack": {
+          "damage": 5
+        },
+        "minecraft:behavior.delayed_attack": {
+          "priority": 0,
+          "attack_once": false,
+          "track_target": true,
+          "require_complete_path": false,
+          "random_stop_interval": 0,
+          "reach_multiplier": 5.0,
+          "attack_duration": 1.05,
+          "hit_delay_pct": 0.50
+        },
+        "minecraft:angry": {
+          "duration": 1.05
+        },
+        "minecraft:mob_effect": {
+          "effect_range": 6.0,
+          "mob_effect": "poison",
+          "effect_time": 3,
+          "entity_filter": {
+            "all_of": [
+              {
+                "test": "has_target",
+                "subject": "self",
+                "value": true
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 5 : 0"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "spider", "mob", "spider_boss" ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/spider_boss.json"
+      },
+      "minecraft:collision_box": {
+        "width": 2,
+        "height": 2
+      },
+      "minecraft:health": {
+        "value": 600,
+        "max": 600
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+                    {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:bronze_axe" }
+            },
+            "damage_multiplier": 3.5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:curved_sword" },
+              "event": "x:curved_sword_attack",
+              "target": "other"
+            },
+            "damage_multiplier": 4.5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:dark_blade" },
+              "event": "x:dark_blade_attack",
+              "target": "other"
+            },
+            "damage_multiplier": 4.5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:double_axe" }
+            },
+            "damage_multiplier": 5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:emerald_broadsword" },
+              "event": "x:emerald_broadsword_attack",
+              "target": "other"
+            },
+            "damage_multiplier": 5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:ice_spear" },
+              "event": "x:ice_spear_attack",
+              "target": "other"
+            },
+            "damage_multiplier": 3.5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:nimble_dagger" }
+            },
+            "damage_multiplier": 4,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:royal_sword" }
+            },
+            "damage_multiplier": 4.5,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:valor_hammer" }
+            },
+            "damage_multiplier": 4,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "x:vanguard_sword" }
+            },
+            "damage_multiplier": 5,
+            "deals_damage": true
+          }
+        ]
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:boss": {
+        "hud_range": 50,
+        "name": "Spider Boss"
+      },
+      "minecraft:movement": {
+        "value": 0.35
+      },
+      "minecraft:knockback_resistance": {
+        "value": 0.5
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "can_pass_doors": true,
+        "can_walk": true
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "track_target": true,
+        "reach_multiplier": 1.0
+      },
+      "minecraft:spawn_entity": {
+        "entities": [
+          {
+            "min_wait_time": 25,
+            "max_wait_time": 25,
+            "spawn_entity": "spider:mini",
+            "num_to_spawn": 5,
+            "filters": {
+              "test": "has_target",
+              "subject": "self",
+              "value": true
+            }
+          },
+          {
+            "min_wait_time": 25,
+            "max_wait_time": 25,
+            "spawn_entity": "spider:black",
+            "num_to_spawn": 3,
+            "filters": {
+              "test": "has_target",
+              "subject": "self",
+              "value": true
+            }
+          }
+        ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:behavior.mount_pathing": {
+        "priority": 5,
+        "speed_multiplier": 1.25,
+        "target_dist": 0.0,
+        "track_target": true
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+        "within_radius": 25.0,
+        "must_see_forget_duration": 25.0,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                }
+              ]
+            },
+            "max_dist": 32
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 0.8
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 10.0,
+        "probability": 0.5
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 7
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      }
+    },
+
+    "events": {
+      "spider_boss:attack": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 100,
+                "add": {
+                  "component_groups": [
+                    "spider_boss:normal_attack"
+                  ]
+                },
+                "remove": {
+                  "component_groups": [
+                    "spider_boss:vomit"
+                  ]
+                }
+              },
+              {
+                "weight": 25,
+                "add": {
+                  "component_groups": [
+                    "spider_boss:vomit"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+
+      "x:despawn": {"add":{"component_groups": [ "x:despawn" ]}}
+    }
+  }
+}

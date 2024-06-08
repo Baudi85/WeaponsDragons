@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.armor": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "variable.is_enchanted ? Material.enchanted : Material.default" } ],
+      "textures": [ "Texture.default", "Texture.enchanted" ],
+      "part_visibility": [
+        {"*": "false"},
+        {"head": "!query.is_stunned"},
+        {"leftArm": "!query.is_sheared"},
+        {"rightArm": "!query.is_sheared"},
+        {"body": "!query.is_sheared"},
+        {"leftLeg": "!query.is_saddled"},
+        {"rightLeg": "!query.is_saddled"},
+        {"waist": "!query.is_saddled"},
+        {"leftBoot": "!query.is_tamed"},
+        {"rightBoot": "!query.is_tamed"}
+      ]
+    }
+  }
+}

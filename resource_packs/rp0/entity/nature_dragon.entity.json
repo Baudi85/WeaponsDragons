@@ -1,0 +1,45 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "x:nature_dragon",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/nature_dragon"
+            },
+            "geometry": {
+                "default": "geometry.nature_dragon"
+            },
+            "animations": {
+                "move_ctrl":"controller.animation.x.dragon.move",
+                "attack_ctrl":"controller.animation.x.dragon.attack",
+                "idle":"animation.nature_dragon.idle",
+                "walking":"animation.nature_dragon.walk",
+                "flying":"animation.nature_dragon.fly",
+                "landing":"animation.nature_dragon.land",
+                "attacking":"animation.nature_dragon.attack",
+                "sit": "animation.nature_dragon.sit",
+                "baby": "animation.dragon.baby_scaling",
+                "look_at_target": "animation.common.look_at_target"
+            },
+            "scripts": {
+                "animate": [
+                    "move_ctrl",
+                    "attack_ctrl",
+                    {"sit":"query.is_sitting"},
+                    {"baby":"query.is_baby"},
+                    "look_at_target"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.x.nature_dragon"
+            ],
+            "spawn_egg": {
+                "base_color": "#4D8630",
+                "overlay_color": "#6B4B17"
+            }
+        }
+    }
+}

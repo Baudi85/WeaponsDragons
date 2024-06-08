@@ -1,0 +1,37 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "spider:boss",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "spider"
+      },
+      "textures": {
+        "default": "textures/entity/spider_boss"
+      },
+      "geometry": {
+        "default": "geometry.spider_boss"
+      },
+      "animations": {
+        "look_at_target": "animation.spider_boss.look_at_target",
+        "idle": "animation.spider_boss.idle",
+        "walk": "animation.spider_boss.walk",
+        "attack": "animation.spider_boss.attack",
+        "vomit": "animation.spider_boss.vomit"
+      },
+      "animation_controllers": [
+        { "look_at_target": "controller.animation.spiders.look_at_target" },
+        { "walk": "controller.animation.spiders.walk" },
+        { "attack": "controller.animation.spiders.boss_attack" }
+      ],
+      "render_controllers": [ "controller.render.default" ],
+      "spawn_egg": {
+        "texture": "spider_boss"
+      },
+      "particle_effects": {
+        "vomit": "spider:vomit"
+      }    
+    }
+  }
+}

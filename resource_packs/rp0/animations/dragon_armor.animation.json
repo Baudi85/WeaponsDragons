@@ -1,0 +1,31 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.dragon_armor.first_person.wear": {
+			"loop": true,
+			"bones": {
+				"head2": {
+					"scale": [0,0,0]
+				},
+				"left_arm": {
+					"scale": [0,0,0]
+				},
+				"right_arm": {
+					"scale": [0,0,0]
+				},
+				"left_leg": {
+					"scale": [0,0,0]
+				},
+				"right_leg": {
+					"scale": [0,0,0]
+				},
+				"body2": {
+					"scale": [0,0,0]
+				},
+				"waist2": {
+					"scale": [0,0,0]
+				}
+			}
+		}
+	}
+}

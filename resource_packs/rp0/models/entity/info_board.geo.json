@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.info_board",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-24, 16, -0.5], "size": [48, 32, 1], "uv": [0, 0]},
+						{"origin": [24, 0, -1.5], "size": [3, 50, 3], "uv": [0, 36]},
+						{"origin": [-27, 0, -1.5], "size": [3, 50, 3], "uv": [0, 36]},
+						{"origin": [-24, 15, -1], "size": [48, 1, 2], "uv": [0, 33]},
+						{"origin": [-24, 48, -1], "size": [48, 1, 2], "uv": [0, 33]}
+					]
+				}
+			]
+		}
+	]
+}

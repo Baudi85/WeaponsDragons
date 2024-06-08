@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+        "description": {
+            "identifier": "x:emerald_broadsword",
+            "category": "Equipment"
+        },
+        "components": {
+            "minecraft:icon": "emerald_broadsword",
+            "minecraft:render_offsets": "apple"
+        }
+    }
+}

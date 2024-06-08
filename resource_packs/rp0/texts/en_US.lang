@@ -1,0 +1,55 @@
+
+pack.name=Weapons + Dragons Resource Pack
+pack.description=Resource Add-On for the Weapons + Dragons World.
+
+item.x:bronze_axe.name=Bronze Axe
+item.x:curved_sword.name=Curved Sword
+item.x:dark_blade.name=Dark Blade
+item.x:double_axe.name=Double Axe
+item.x:emerald_broadsword.name=Emerald Broadsword
+item.x:ice_spear.name=Ice Spear
+item.x:nimble_dagger.name=Nimble Dagger
+item.x:royal_sword.name=Royal Sword
+item.x:valor_hammer.name=Hammer of Valor
+item.x:valor_hammer_dummy.name=Hammer of Valor
+item.x:vanguard_sword.name=Vanguard Sword
+
+item.x:bronze_axe_drop.name=Bronze Axe
+item.x:curved_sword_drop.name=Curved Sword
+item.x:dark_blade_drop.name=Dark Blade
+item.x:double_axe_drop.name=Double Axe
+item.x:emerald_broadsword_drop.name=Emerald Broadsword
+item.x:ice_spear_drop.name=Ice Spear
+item.x:nimble_dagger_drop.name=Nimble Dagger
+item.x:royal_sword_drop.name=Royal Sword
+item.x:valor_hammer_drop.name=Hammer of Valor
+item.x:vanguard_sword_drop.name=Vanguard Sword
+
+item.x:dragon_helmet.name=Dragon Scale Helmet
+item.x:dragon_chestplate.name=Dragon Scale Chestplate
+item.x:dragon_leggings.name=Dragon Scale Leggings
+item.x:dragon_boots.name=Dragon Scale Boots
+
+item.x:dragon_meat.name=Raw Dragon Meat
+item.x:cooked_dragon_meat.name=Cooked Dragon Meat
+item.x:dragon_scales.name=Dragon Scales
+
+item.spawn_egg.entity.spider:boss.name=Spider Boss
+item.spawn_egg.entity.x:generic_dragon.name=Dragon
+item.spawn_egg.entity.x:nature_dragon.name=Nature Dragon
+
+entity.spider:boss.name=Spider Boss
+entity.x:generic_dragon.name=Dragon
+entity.x:nature_dragon.name=Nature Dragon
+entity.x:dragon_egg.name=Dragon Egg
+entity.x:g.name=System
+entity.x:marker.name=Marker
+entity.x:credit_board.name=Credit Board
+entity.x:info_board.name=Info Board
+entity.x:rating_board.name=Rating Board
+entity.x:discord_board.name=Discord Board
+
+action.hint.exit.x:generic_dragon=Sneak to dismount
+action.hint.exit.x:natural_dragon=Sneak to dismount
+
+entity.unknown.name=Dragon

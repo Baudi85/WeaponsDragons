@@ -1,0 +1,48 @@
+{
+    "entity_sounds": {
+        "entities": {            
+            "x:generic_dragon" : {
+                "events" : {
+                "ambient" : "mob.ravager.ambient",
+                "death" : "mob.ravager.death",
+                "fly" : "mob.parrot.fly",
+                "hurt" : "mob.enderdragon.hit",
+                "mad" : "mob.enderdragon.growl"
+                },
+                "pitch" : [ 0.80, 1.20 ],
+                "volume" : 80.0
+            },
+            "x:nature_dragon" : {
+                "events" : {
+                "ambient" : "mob.ravager.ambient",
+                "death" : "mob.ravager.death",
+                "fly" : "mob.parrot.fly",
+                "hurt" : "mob.enderdragon.hit",
+                "mad" : "mob.enderdragon.growl"
+                },
+                "pitch" : [ 0.80, 1.20 ],
+                "volume" : 80.0
+            },
+            "spider:boss" : {
+               "pitch" : [ 0.80, 1.20 ],
+               "volume" : 1.0,
+               "events" : {
+                  "ambient" : "mob.wither.ambient",
+                  "death" : "mob.wither.death",
+                  "hurt" : "mob.wither.hurt",
+                  "attack" : "mob.wither.break_block",
+                  "step" : {
+                     "pitch" : 1.0,
+                     "sound" : "mob.spider.step",
+                     "volume" : 1.0
+                  },
+                  "spawn" : {
+                     "pitch" : 1.0,
+                     "sound" : "mob.wither.spawn",
+                     "volume" : 1.0
+                  }
+               }
+            }
+        }
+    }
+}

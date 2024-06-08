@@ -1,0 +1,32 @@
+{
+
+  "format_version": "1.8.0",
+  "render_controllers": {
+
+    "controller.render.x.dragon_egg": {
+
+      "arrays": {
+        "textures": {
+          "Array.skins":[
+            "Texture.egg1",
+            "Texture.egg2",
+            "Texture.egg3",
+            "Texture.egg4",
+            "Texture.egg5",
+            "Texture.egg6"
+          ]
+        }
+      },
+    
+      "geometry": "Geometry.default",
+    
+      "materials": [ { "*": "Material.default" } ],
+    
+      "textures": [ "Array.skins[ variable.stage ]" ],
+      
+      "is_hurt_color": {}
+    
+    }
+  
+  }
+}

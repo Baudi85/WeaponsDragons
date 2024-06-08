@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+        "description": {
+            "identifier": "x:double_axe",
+            "category": "Equipment"
+        },
+        "components": {
+            "minecraft:icon": "double_axe",
+            "minecraft:render_offsets": "apple"
+        }
+    }
+}

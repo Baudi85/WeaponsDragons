@@ -1,0 +1,30 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "x:valor_hammer"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "IGI",
+      "GSG",
+      " S "
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:stick"
+      },
+      "G":{
+        "item": "minecraft:gold_ingot"
+      },
+      "I":{
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "x:valor_hammer"
+    }
+  }
+}

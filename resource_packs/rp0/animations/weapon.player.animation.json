@@ -1,0 +1,193 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.bronze_axe.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"position": [6, 15, 1]
+				}
+			}
+		},
+		"animation.player.bronze_axe.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [45, 0, 0],
+					"position": [-6, 3.5, -1]
+				}
+			}
+		},
+		"animation.player.bronze_axe.first_person.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [90, 90, -45],
+					"position": [-6, 3.5, -1]
+				}
+			}
+		},
+		"animation.player.curved_sword.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [77.83397, -22.16289, -82.34177],
+					"position": [-6, 7, 0]
+				}
+			}
+		},
+		"animation.player.curved_sword.first_person.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [0, 5, -135],
+					"position": [-5, 12, 0]
+				}
+			}
+		},
+		"animation.player.dark_blade.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [45, 0, 0],
+					"position": [-6, 7, 0]
+				}
+			}
+		},
+		"animation.player.dark_blade.first_person.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [90, 90, -45],
+					"position": [-5, 12, 0]
+				}
+			}
+		},
+		"animation.player.double_axe.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [45, 0, 0],
+					"position": [-6, 3.5, -1]
+				}
+			}
+		},
+		"animation.player.double_axe.first_person.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [90, 90, -45],
+					"position": [-6, 3.5, -1]
+				}
+			}
+		},
+		"animation.player.emerald_broadsword.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [45, 0, 0],
+					"position": [-6, 7, 0]
+				}
+			}
+		},
+		"animation.player.emerald_broadsword.first_person.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [90, 90, -45],
+					"position": [-5, 12, 0]
+				}
+			}
+		},
+		"animation.player.ice_spear.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [45, 0, 0],
+					"position": [-6, 7, 0]
+				}
+			}
+		},
+		"animation.player.ice_spear.first_person.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [90, 90, -45],
+					"position": [-5, 12, 0]
+				}
+			}
+		},
+		"animation.player.nimble_dagger.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [45, 0, 0],
+					"position": [-6, 7, 0]
+				}
+			}
+		},
+		"animation.player.nimble_dagger.first_person.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [90, 90, -45],
+					"position": [-5, 12, 0]
+				}
+			}
+		},
+		"animation.player.royal_sword.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [45, 0, 0],
+					"position": [-6, 7, 0]
+				}
+			}
+		},
+		"animation.player.royal_sword.first_person.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [90, 90, -45],
+					"position": [-5, 12, 0]
+				}
+			}
+		},
+		"animation.player.valor_hammer.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [82.5, 0, 0],
+					"position": [-6, 4, 2]
+				}
+			}
+		},
+		"animation.player.valor_hammer.first_person.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [0, 90, -152.5],
+					"position": [-5, 12, 0]
+				}
+			}
+		},
+		"animation.player.vanguard_sword.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [45, 0, 0],
+					"position": [-6, 7, 0]
+				}
+			}
+		},
+		"animation.player.vanguard_sword.first_person.hold": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [90, 90, -45],
+					"position": [-5, 12, 0]
+				}
+			}
+		}
+	}
+}

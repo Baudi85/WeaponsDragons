@@ -1,0 +1,52 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "x:dragon_egg",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "egg1": "textures/entity/dragon_egg1",
+                "egg2": "textures/entity/dragon_egg2",
+                "egg3": "textures/entity/dragon_egg3",
+                "egg4": "textures/entity/dragon_egg4",
+                "egg5": "textures/entity/dragon_egg5",
+                "egg6": "textures/entity/dragon_egg6"
+            },
+            "geometry": {
+                "default": "geometry.dragon_egg"
+            },
+            "animations": {
+                "hatch_ctrl":"controller.animation.x.dragon_egg.hatch",
+                "jump":"animation.dragon_egg.jump",
+                "wobble1":"animation.dragon_egg.wobble1",
+                "wobble2":"animation.dragon_egg.wobble2",
+                "wobble3":"animation.dragon_egg.wobble3",
+                "hatch":"animation.dragon_egg.hatch",
+                "sequence":"animation.dragon_egg.hatch_sequence"
+            },
+            "scripts": {
+                "variables": {
+                    "variable.stage":"public"
+                },
+                "initialize": [
+                    "variable.stage=0;"
+                ],
+                "pre_animation": [
+                    "variable.stage = query.is_powered ? 5 : (((query.health / query.max_health) >= 0.99) ? 0 : (((query.health / query.max_health) >= 0.75) ? 1 : (((query.health / query.max_health) >= 0.5) ? 2 : (((query.health / query.max_health) >= 0.25) ? 3 : (((query.health / query.max_health) >= 0.01) ? 4 : 5)))));"
+                ],
+                "animate": [
+                    "hatch_ctrl"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.x.dragon_egg"
+            ],
+            "spawn_egg": {
+                "base_color": "#F3E9DE",
+                "overlay_color": "#681E16"
+            }
+        }
+    }
+}

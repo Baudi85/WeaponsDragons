@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "x:info_board",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "info_1": "textures/entity/info_board_1",
+                "info_2": "textures/entity/info_board_2",
+                "info_3": "textures/entity/info_board_3"
+            },
+            "geometry": {
+                "default": "geometry.info_board"
+            },
+            // "animations": {
+            // },
+            // "scripts": {
+            //     "animate": [
+            //     ]
+            // },
+            "render_controllers": [
+                "controller.render.x.info_board"
+            ]
+        }
+    }
+}

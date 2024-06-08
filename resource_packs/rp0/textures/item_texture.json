@@ -1,0 +1,96 @@
+{ 
+  "resource_pack_name": "Weapons + Dragons RP", 
+  "texture_name": "atlas.items", 
+  "texture_data": { 
+    "spider_boss" : {
+       "textures" : "textures/items/spider_boss"
+    },
+    "cooked_dragon_meat": { 
+      "textures": "textures/items/dragon_cooked_meat"
+    },
+    "dragon_meat": { 
+      "textures": "textures/items/dragon_meat"
+    },
+    "dragon_scales": { 
+      "textures": "textures/items/dragon_scales"
+    },
+    "dragon_helmet": { 
+      "textures": "textures/items/dragon_armor_helmet"
+    },
+    "dragon_chestplate": { 
+      "textures": "textures/items/dragon_armor_chestplate"
+    },
+    "dragon_leggings": { 
+      "textures": "textures/items/dragon_armor_leggings"
+    },
+    "dragon_boots": { 
+      "textures": "textures/items/dragon_armor_boots"
+    },
+    "bronze_axe": { 
+      "textures": "textures/items/bronze_axe"
+    },
+    "curved_sword": { 
+      "textures": "textures/items/curved_sword"
+    },
+    "dark_blade": { 
+      "textures": "textures/items/dark_blade"
+    },
+    "double_axe": { 
+      "textures": "textures/items/double_axe"
+    },
+    "emerald_broadsword": { 
+      "textures": "textures/items/emerald_broadsword"
+    },
+    "ice_spear": { 
+      "textures": "textures/items/ice_spear"
+    },    
+    "nimble_dagger": { 
+      "textures": "textures/items/nimble_dagger"
+    },    
+    "royal_sword": { 
+      "textures": "textures/items/royal_sword"
+    },    
+    "valor_hammer": { 
+      "textures": "textures/items/valor_hammer"
+    },    
+    "vanguard_sword": { 
+      "textures": "textures/items/vanguard_sword"
+    },
+    "bronze_axe_invisible": { 
+      "textures": "textures/items/invisible/bronze_axe"
+    },
+    "curved_sword_invisible": { 
+      "textures": "textures/items/invisible/curved_sword"
+    },
+    "dark_blade_invisible": { 
+      "textures": "textures/items/invisible/dark_blade"
+    },
+    "double_axe_invisible": { 
+      "textures": "textures/items/invisible/double_axe"
+    },
+    "emerald_broadsword_invisible": { 
+      "textures": "textures/items/invisible/emerald_broadsword"
+    },
+    "ice_spear_invisible": { 
+      "textures": "textures/items/invisible/ice_spear"
+    },    
+    "nimble_dagger_invisible": { 
+      "textures": "textures/items/invisible/nimble_dagger"
+    },    
+    "royal_sword_invisible": { 
+      "textures": "textures/items/invisible/royal_sword"
+    },    
+    "valor_hammer_invisible": { 
+      "textures": "textures/items/invisible/valor_hammer"
+    },    
+    "vanguard_sword_invisible": { 
+      "textures": "textures/items/invisible/vanguard_sword"
+    }
+    // "spawn": {
+    //   "textures": [
+    //     "textures/items/nature_dragon_spawn_egg",
+    //     "textures/items/generic_dragon_spawn_egg"
+    //   ]
+    // }
+  }
+}

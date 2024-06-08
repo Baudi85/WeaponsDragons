@@ -1,0 +1,86 @@
+{
+
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+      
+      
+  
+  
+  
+      "description": {
+  
+        "identifier": "x:info_board",
+  
+        "is_spawnable": false,
+        "is_summonable": true,
+        "is_experimental": false,
+  
+        "animations": {
+  
+        },
+  
+        "scripts": {
+          "animate": [
+  
+          ]
+        }
+  
+      },
+  
+  
+  
+  
+  
+      "component_groups": {
+  
+        "x:info_1":{ "minecraft:skin_id": {"value": 0}},
+        "x:info_2":{ "minecraft:skin_id": {"value": 1}},
+        "x:info_3":{ "minecraft:skin_id": {"value": 2}},
+
+        "x:despawn": { "minecraft:instant_despawn": {} }  
+  
+        /// ↓ VANILLA CGs ↓
+  
+      },
+  
+  
+  
+  
+  
+      "components": {
+  
+        "minecraft:type_family": {"family": [ "x:x", "x:info_board", "x:board" ]},
+        "minecraft:breathable": { "breathes_solids": true, "breathes_water": true, "breathes_lava": true },
+        "minecraft:health": { "value": 1, "max": 1, "min": 1 },
+        "minecraft:physics": { "has_collision": true, "has_gravity": true },
+        "minecraft:collision_box": { "height": 0.00001, "width": 0.00001 },
+        "minecraft:custom_hit_test": { "hitboxes": [{ "width": 0.00001, "height": 0.00001, "pivot": [ 0, 1000, 0 ]}] },
+        "minecraft:damage_sensor": {"triggers":{"deals_damage": false}},
+        "minecraft:knockback_resistance": {"value": 1,"max": 1}
+        // "minecraft:tick_world": { "never_despawn": true, "radius": 2 }
+  
+        /// ↓ VANILLA COMPONENTS ↓
+  
+      },
+  
+  
+  
+  
+  
+      "events": {
+
+        "x:info_1":{"add": {"component_groups": [ "x:info_1" ]}, "remove": {"component_groups": [ "x:info_2", "x:info_3" ]}},
+        "x:info_2":{"add": {"component_groups": [ "x:info_2" ]}, "remove": {"component_groups": [ "x:info_1", "x:info_3" ]}},
+        "x:info_3":{"add": {"component_groups": [ "x:info_3" ]}, "remove": {"component_groups": [ "x:info_2", "x:info_1" ]}},
+  
+        "x:despawn": { "add": { "component_groups" : [ "x:despawn" ] } },
+        "minecraft:entity_spawned": {}
+  
+        /// ↓ VANILLA EVENTS ↓
+  
+      }
+      
+    }
+  
+  }
+  

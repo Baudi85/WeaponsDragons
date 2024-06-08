@@ -1,0 +1,24 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "weight": 1,
+                    "type": "item",
+                    "name": "x:valor_hammer",
+                    "functions": [
+                        {
+                            "function": "specific_enchants",
+                            "enchants": {
+                                "id": "knockback",
+                                "level": 2
+                            }
+                            
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

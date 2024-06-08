@@ -1,0 +1,30 @@
+{
+
+  "format_version": "1.8.0",
+  "render_controllers": {
+
+    "controller.render.player.dragon_armor": {    
+      "geometry": "Geometry.player_dragon_armor",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.dragon_armor" ]    ,
+      "part_visibility": [
+        {"*": "false"},
+        {"head2": "variable.dragon_armor_helmet"},
+        {"horn1": "variable.dragon_armor_helmet"},
+        {"horn2": "variable.dragon_armor_helmet"},
+        {"horn3": "variable.dragon_armor_helmet"},
+        {"horn4": "variable.dragon_armor_helmet"},
+        {"horn5": "variable.dragon_armor_helmet"},
+        {"horn6": "variable.dragon_armor_helmet"},
+        {"left_arm": "variable.dragon_armor_chestplate"},
+        {"right_arm": "variable.dragon_armor_chestplate"},
+        {"body2": "variable.dragon_armor_chestplate"},
+        {"left_leg": "variable.dragon_armor_leggings"},
+        {"right_leg": "variable.dragon_armor_leggings"},
+        {"waist2": "variable.dragon_armor_leggings"},
+        {"left_shoe": "variable.dragon_armor_boots"},
+        {"right_shoe": "variable.dragon_armor_boots"}
+      ]
+    }
+  }
+}

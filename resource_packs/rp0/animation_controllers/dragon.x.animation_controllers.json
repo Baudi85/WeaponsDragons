@@ -1,0 +1,85 @@
+{
+    "format_version": "1.18.0",
+    "animation_controllers": {
+        "controller.animation.x.dragon.move": {
+            "states": {
+                "default": {
+                    "animations": [
+                        "idle"
+                    ],
+                    "transitions": [
+                        {
+                            "walk": "query.ground_speed >= 0.2 && query.is_on_ground"
+                        },
+                        {
+                            "fly": "!query.is_on_ground"
+                        }
+                    ],
+                    "blend_transition": 0.3
+                },
+                "walk": {
+                    "animations": [
+                        "walking"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.ground_speed < 0.2 && query.is_on_ground"
+                        },
+                        {
+                            "fly": "!query.is_on_ground"
+                        }
+                    ],
+                    "blend_transition": 0.3
+                },
+                "fly":{
+                    "animations": [
+                        "flying"
+                    ],
+                    "transitions": [
+                        {
+                            "land": "query.is_on_ground"
+                        }
+                    ],
+                    "blend_transition": 0.3
+                },
+                "land":{
+                    "animations": [
+                        "landing"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.all_animations_finished"
+                        },
+                        {
+                            "walk": "query.ground_speed > 0.2"
+                        }
+                    ],
+                    "blend_transition": 0.3
+                }
+            }
+        },
+        "controller.animation.x.dragon.attack": {
+            "states": {
+                "default":{
+                    "transitions": [
+                        {
+                            "attack": "variable.attack_time"
+                        }
+                    ],
+                    "blend_transition": 0.1
+                },
+                "attack":{
+                    "animations": [
+                        "attacking"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!variable.attack_time"
+                        }
+                    ],
+                    "blend_transition": 0.3
+                }
+            }
+        }
+    }
+}
